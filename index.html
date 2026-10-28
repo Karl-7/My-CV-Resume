@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jingkun Hou – Résumé</title>
+<meta name="description" content="Résumé of Jingkun Hou. View online or download as PDF.">
+<meta property="og:title" content="Jingkun Hou – Résumé">
+<meta property="og:description" content="View online or download as PDF.">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg: #e8ecf1;
+    --bar: #f6f8fa;
+    --ink: #17202e;
+    --muted: #55637a;
+    --line: #cdd5e0;
+    --accent: #24507f;
+    --accent-ink: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #11161e;
+      --bar: #18202b;
+      --ink: #e8edf4;
+      --muted: #94a3b8;
+      --line: #2b3646;
+      --accent: #7fb0e6;
+      --accent-ink: #0c1420;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0.9rem clamp(1rem, 4vw, 2.5rem);
+    background: var(--bar);
+    border-bottom: 1px solid var(--line);
+  }
+  h1 {
+    margin: 0;
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+  }
+  .role { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.95rem; }
+  .actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block;
+    padding: 0.55rem 1.1rem;
+    border-radius: 6px;
+    border: 1px solid var(--accent);
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+  .btn.secondary { background: transparent; color: var(--accent); }
+  .btn:hover { filter: brightness(1.08); }
+  .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  main {
+    flex: 1;
+    min-height: 0;
+    padding: clamp(0.75rem, 2vw, 1.5rem) clamp(1rem, 4vw, 2.5rem) clamp(1rem, 3vw, 2rem);
+    display: flex;
+    justify-content: center;
+  }
+  .viewer {
+    width: 100%;
+    max-width: 62rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 24px rgba(10, 20, 40, 0.14);
+    overflow: hidden;
+  }
+  .viewer object { display: block; width: 100%; height: 100%; min-height: 70vh; border: 0; }
+  .fallback {
+    display: grid;
+    place-content: center;
+    gap: 1rem;
+    height: 100%;
+    min-height: 40vh;
+    padding: 2rem;
+    text-align: center;
+    background: var(--bar);
+    color: var(--ink);
+  }
+  .fallback p { margin: 0; color: var(--muted); max-width: 28ch; }
+  /* Phones can't preview PDFs inline reliably, so show buttons instead */
+  .viewer object { display: none; }
+  @media (min-width: 760px) {
+    .viewer object { display: block; }
+    .viewer .fallback.mobile-only { display: none; }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Jingkun Hou</h1>
+      <p class="role">AI Research Engineer - Multimodal LLM, Computer Vision, NLP, Multimodal data processing, ML/DL/RL</p>
+    </div>
+    <div class="actions">
+      <a class="btn secondary" href="resume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+      <a class="btn" href="resume.pdf" download="Jingkun-Hou-Resume.pdf">Download PDF</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="viewer">
+      <object data="resume.pdf#view=FitH" type="application/pdf" aria-label="Résumé PDF">
+        <div class="fallback">
+          <p>I'm sorry, but it seems like your browser can’t show my résumé here?</p>
+          <a class="btn" href="resume.pdf">Open the PDF</a>
+        </div>
+      </object>
+      <div class="fallback mobile-only">
+        <p>Open the résumé as a PDF.</p>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Open résumé</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
